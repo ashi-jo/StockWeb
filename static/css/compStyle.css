@@ -1,0 +1,31 @@
+body{
+  background-color: #0B1118;
+  color:#fff;
+  /* text-align: center; */
+}
+
+.lBlueBox{
+  padding:10px;
+  /* background-color:#fff; */
+  background-color: #151d27;
+  border-radius:10px;
+  margin: 20px;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+td,th{
+  border: #fff 2px solid;
+}
+
+/* table{
+  background-color: #F5F6B4;
+  border: #0B1118 2px solid;
+} */
+
+.padding{
+  padding: 30px;
+}
