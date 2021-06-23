@@ -24,7 +24,8 @@ header{
 .headFont{
   font-size: 30px;
   /* text-decoration: underline; */
-  text-align: center;
+  margin-left: 15px;
+  text-align: left;
 }
 
 .formDiv{
@@ -117,6 +118,16 @@ i:hover{
   border-radius: 0px;
   float: right;
   
+}
+
+span{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-align: center;
 }
 
 
