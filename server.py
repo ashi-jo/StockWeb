@@ -8,12 +8,17 @@ nifty_50_list = requests.get(nifty_50).text
 soup = BeautifulSoup(nifty_50_list, 'lxml')
 
 ind={}
-nifty_50=soup.find('div', attrs={"id": "indices_stocks"})
-indices=nifty_50.find('div', class_='indices')
-for indices in indices.div.table.tbody.find_all('tr'):
-    index=indices.td.p.a
-    index_name=index.text
-    # print(index_name)
+# nifty_50=soup.find('div', attrs={"id": "indices_stocks"})
+
+nifty_50=soup.find('div', attrs={"id": "indicesTableData"})
+# indices=nifty_50.find('div', class_='indices')
+indice=soup.find('div', attrs={"id": "tableslider"})
+# for indices in indices.div.table.tbody.find_all('tr'):
+for indices in indice.table.tbody.find_all('tr'):
+    # index=indices.td.p.a
+    index=indices.td.a
+    # index_name=index.text
+    index_name=index.get_text(strip=True)
     ind[index_name]={}
     ind[index_name]['index_url']=index['href']
     # print(index['href'])
@@ -72,9 +77,9 @@ def getCompanydata(company_name,stockListData):
         value = row.find_all('td')
         stockListData[company_name][value[0].text]=value[1].text
 
-
-# getCompanydata('Adani Ports')
-# print(stockListData)
+# dataTemp={}
+# getCompanydata('Adani Ports',dataTemp)
+# print(dataTemp)
     
 
 
